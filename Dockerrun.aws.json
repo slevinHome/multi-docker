@@ -5,19 +5,22 @@
      "name": "client",
      "image": "slevinhome/multi-client",
      "hostname": "client",
-     "essential": false
+     "essential": false',
+     "memory": 128
    },
    {
      "name": "server",
      "image": "slevinhome/multi-server",
      "hostname": "api",
-     "essential": false
+     "essential": false,
+     "memory": 128
    },
    {
      "name": "worker",
      "image": "slevinhome/multi-worker",
      "hostname": "worker",
-     "essential": false
+     "essential": false,
+     "memory": 128
    },
    {
      "name": "nginx",
@@ -29,7 +32,8 @@
          "containerPort": 80
        }
      ],
-     "links": ["clien", "server"]
+     "links": ["clien", "server"],
+     "memory": 128
    }
   ]
 }
