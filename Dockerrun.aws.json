@@ -1,0 +1,35 @@
+{
+ "AWSEBDockerrunVersion": 2,
+ "containerDefinitions": [
+   {
+     "name": "client",
+     "image": "slevinhome/multi-client",
+     "hostname": "client",
+     "essential": false
+   },
+   {
+     "name": "server",
+     "image": "slevinhome/multi-server",
+     "hostname": "api",
+     "essential": false
+   },
+   {
+     "name": "worker",
+     "image": "slevinhome/multi-worker",
+     "hostname": "worker",
+     "essential": false
+   },
+   {
+     "name": "nginx",
+     "image": "slevinhome/multi-nginx",
+     "essential": true,
+     "portMappings": [
+       {
+         "hostPort": 80,
+         "containerPort": 80
+       }
+     ],
+     "links": ["clien", "server"]
+   }
+  ]
+}
