@@ -8,7 +8,7 @@ before_install:
   - docker build -t lstas180877/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true slevinhome/react-test npm run test
+  - docker run -e CI=true lstas180877/react-test npm run test
 
 after_success:
   - docker build -t lstas180877/multi-client ./client
