@@ -12,9 +12,9 @@ script:
 
 after_success:
   - docker build -t lstas180877/multi-client ./client
-  - docker build -t lstas180877/react-nginx ./nginx
-  - docker build -t lstas180877/react-server ./server
-  - docker build -t lstas180877/react-worker ./worker
+  - docker build -t lstas180877/multi-nginx ./nginx
+  - docker build -t lstas180877/multi-server ./server
+  - docker build -t lstas180877/multi-worker ./worker
 
 # Log in to the docker CLI
 
