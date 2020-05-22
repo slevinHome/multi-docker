@@ -18,7 +18,6 @@ after_success:
 
 # Log in to the docker CLI
 
-#   - docker login docker.io
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -p --password-stdin
 #  - echo "$DOCKER_PASSWORD" | docker login -u="$DOCKER_ID" -p "$DOCKER_PASSWORD" docker.io
 
