@@ -5,16 +5,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t slevinhome/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t slevinhome/react-test ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true slevinhome/react-test npm run test
 
 after_success:
-  - docker build -t slevinhome/multi-client -f ./client
-  - docker build -t slevinhome/react-nginx -f ./nginx
-  - docker build -t slevinhome/react-server -f ./server
-  - docker build -t slevinhome/react-worker -f ./worker
+  - docker build -t slevinhome/multi-client ./client
+  - docker build -t slevinhome/react-nginx ./nginx
+  - docker build -t slevinhome/react-server ./server
+  - docker build -t slevinhome/react-worker ./worker
 
 # Log in to the docker CLI
 
