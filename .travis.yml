@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t slevinhome/react-test ./client/Dockerfile.dev ./client
+  - docker build -t slevinhome/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true slevinhome/react-test npm run test
