@@ -11,20 +11,20 @@ script:
   - docker run -e CI=true lstas180877/react-test npm run test
 
 after_success:
-  - docker build -t lstas180877/multi-client:v1 ./client
-  - docker build -t lstas180877/multi-nginx:v1 ./nginx
-  - docker build -t lstas180877/multi-server:v1 ./server
-  - docker build -t lstas180877/multi-worker:v1 ./worker
+  - docker build -t lstas180877/multi-client:v2 ./client
+  - docker build -t lstas180877/multi-nginx:v2 ./nginx
+  - docker build -t lstas180877/multi-server:v2 ./server
+  - docker build -t lstas180877/multi-worker:v2 ./worker
 
 # Log in to the docker CLI
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Take those images and push them to docker hub
-  - docker push lstas180877/multi-client:v1
-  - docker push lstas180877/multi-nginx:v1
-  - docker push lstas180877/multi-server:v1
-  - docker push lstas180877/multi-worker:v1
+  - docker push lstas180877/multi-client:v2
+  - docker push lstas180877/multi-nginx:v2
+  - docker push lstas180877/multi-server:v2
+  - docker push lstas180877/multi-worker:v2
 
 
 #deploy:
